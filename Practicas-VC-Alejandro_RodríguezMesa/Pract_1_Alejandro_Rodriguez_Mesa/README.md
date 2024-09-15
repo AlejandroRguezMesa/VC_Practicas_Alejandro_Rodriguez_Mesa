@@ -1,0 +1,2 @@
+El archivo "Tareas_VC_P1_Alejandro_Rodriguez_Mesa.ipynb" contiene todas las tareas solicitadas en un único cuaderno. 
+Mientras que la carpeta "Tareas_por_separado" tiene varios cuadernos. Cada cuaderno contiene una o en algunos casos, dos de las tareas. 
