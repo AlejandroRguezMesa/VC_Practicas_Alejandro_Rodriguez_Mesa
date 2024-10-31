@@ -243,9 +243,9 @@ En este video en particular no salen personas, pero de hacerlo, se les desenfoca
 
 ## Resultados con el video propuesto como ejemplo.
 
-[Video original]()
+[Video original](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/alejandro_rodriguez145_alu_ulpgc_es/EUkgda2HjilBmpK9ZNmUpHMBEraGmpOVvIW09XabkJ-LzA?e=ZmcPTc&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
-[Resultado]()
+[Resultado](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/alejandro_rodriguez145_alu_ulpgc_es/EY2nOx3ZOx1Chz3enxzNwogBk2_fuxvb3hfpAYLNhYmiew?e=x27nP6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 En el video propuesto hay bastantes personas y coches, pero no se detectan la mayoría de las matrículas por la posición de la cámara. 
 
