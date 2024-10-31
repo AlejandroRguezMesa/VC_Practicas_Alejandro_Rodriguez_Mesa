@@ -38,8 +38,8 @@ A este conjunto de imágenes le apliqué varios filtros de data augmentation, da
 ![image](https://github.com/user-attachments/assets/60435af5-7843-4bf0-a4c4-d5e38dabae54)
 
 Finalmente exporté en formato YOLO v11 los datos de las imágenes anotadas.
-### IMPORTANTE
-**Recomiendo que si alguien utiliza ese Dataset, elimine las imágenes en las que se anotó matrículas parcialmente cubiertas con plantas, o que realice más fotos de esa índole para evitar falsas detecciones.**
+### Nota
+En el conjunto de imágenes, anoté matrículas parcialmente cubiertas con plantas, lo que supuso falsas detecciones en ciertas plantas. Ya las he eliminado, asi que ya no debería de suceder, pero durante la realización de la práctica tuve ese inconveniente.
 
 ## Entrenamiento del Modelo
 Como mencioné previamente, hice uso de CUDA para el entrenamiento.
@@ -60,7 +60,31 @@ results = model.train(data= data_Yaml_path, epochs=40, imgsz=640, batch=16, lr0=
   - valores más altos pueden hacer que el modelo converja más rápido, pero también pueden hacer que se salte el mínimo óptimo.
   - Valores más bajos pueden estabilizar el aprendizaje pero requerirán más tiempo de entrenamiento.
 
-- patience=5: Define el Early Stopping, si no hay mejora en 5 épocas, el entrenamiento se detiene. Esto no fue necesario en mi caso, pero si hubiese puesto un número mayor de épocas, podría haber sido útil.
+- patience=5: Define el Early Stopping, si no hay mejora en 5 épocas, el entrenamiento se detiene. Esto no fue necesario en este caso, pero si hubiese puesto un número mayor de épocas, podría haber sido útil.
+
+## Resultados 
+Tras ejecutarse el modelo, se crea una carpeta llamada runs que contiene los datos de entrenamiento, incluyendo los pesos que serán usados para futuras detecciones, y una gráficas acerca del entrenamiento. 
+
+En mi caso, las gráficas de entrenamiento y validación muestran que el modelo ha convergido adecuadamente. 
+![image](https://github.com/user-attachments/assets/35f544e4-797e-43fa-a71e-f8cb26c5def6)
+
+### Analisis de la gráfica.
+A modo resumen, la gráfica muestra lo siguiente:
+
+***Pérdidas de Entrenamiento***
+- train/box_loss: Disminuye consistentemente, lo que indica que el modelo mejora en la predicción de las cajas delimitadoras.
+- train/cls_loss: También disminuye, mostrando que el modelo está aprendiendo a clasificar correctamente los objetos.
+- train/dfl_loss: La pérdida DFL (Distribution Focal Loss) baja de manera gradual, señal de que el modelo se ajusta mejor a los bordes de los objetos.
+  
+***Pérdidas de Validación***
+- val/box_loss, val/cls_loss y val/dfl_loss: Todas las pérdidas de validación disminuyen, lo cual es un buen indicador de que el modelo no se está sobreajustando a los datos de entrenamiento y generaliza bien en los datos de validación.
+  
+***Métricas***
+- metrics/precision(B) y metrics/recall(B): Ambas suben rápidamente y se estabilizan cerca de 0.9, lo que sugiere que el modelo está logrando una alta precisión y sensibilidad.
+- metrics/mAP50(B) y metrics/mAP50-95(B): Ambas métricas mAP (Mean Average Precision) suben rápido, alcanzando valores elevados (cercanos a 1 en mAP50 y a 0.7 en mAP50-95). Esto indica un buen rendimiento general del modelo en la detección de objetos, tanto en umbrales altos como bajos de IoU.
+
+***Conclusión***
+En general, el modelo se entrena adecuadamente, logrando buenas métricas en precisión, recall y mAP. La disminución de las pérdidas tanto en entrenamiento como en validación sin señales de sobreajuste son señales positivas de un buen entrenamiento.
 
 ## Aplicaciones
 
@@ -188,6 +212,10 @@ El problema surge en el caso de que se deje de detectar el objeto al que se est�
 - El texto de las matrículas detectadas se extrae con OCR y se filtran textos que no cumplen con el patrón típico de matrículas (letras y números).
 - Las matrículas detectadas se registran en un archivo CSV, y se aplican desenfoques para proteger la información de las matrículas.
 
+### Conteo de clases
+- Se crea un conjunto para guardar los id detectados para cada clase.
+- Como es un conjunto, no se crearán duplicados. Y por lo tanto, la longitud del conjunto indicará el número total de objetos detectados de cada clase.
+
 ### Actualización de Rastreo y Salida de Datos:
 
 - Los datos se escriben continuamente en un archivo CSV, incluyendo detalles como tipo de objeto, confianza, y texto de matrícula.
@@ -212,6 +240,22 @@ El video [video_output.mp4](https://github.com/AlejandroRguezMesa/VC_Practicas_A
 En este video en particular no salen personas, pero de hacerlo, se les desenfocaría la cara (para ser exactos la parte superior de lo detectado como persona).
 
 ![image](https://github.com/user-attachments/assets/7bbe2425-2bf1-48a6-b99a-87224bbd9128)
+
+## Resultados con el video propuesto como ejemplo.
+
+[Video original]()
+
+[Resultado]()
+
+En el video propuesto hay bastantes personas y coches, pero no se detectan la mayoría de las matrículas por la posición de la cámara. 
+
+**Número de coches detectados:78. Número de personas: 51. Número de matrículas: 4.**
+
+La anonimización fue bastante buena en este caso, ya que el movimiento de los coches favorece la detección de los contornos de las matrículas, en cuenta a las detecciones con el OCR.
+De las 4 matrículas detectadas, solo dos de ellas tuvieron al menos una detección de texto perfecta. 1770 JYG en 2 frames, y 1965 KBP en 13 frames, 15 si contamos 2 frames en los que no fue detectado el espacio, pero si los demás caracteres. 
+
+![image](https://github.com/user-attachments/assets/5a4a2d43-da42-4da6-b41f-1c629bfe208f)
+
 
 # Referencias
 
