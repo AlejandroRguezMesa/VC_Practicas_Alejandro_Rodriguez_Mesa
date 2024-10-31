@@ -127,6 +127,8 @@ Con el objetivo de detectar el texto de las matrículas detectadas, hice uso de 
 Se usa la función pytesseract.image_to_string para pasar de una imagen RGB a una string.
 
   ![image](https://github.com/user-attachments/assets/c271ad80-72a4-4de6-ba1e-bc6a7ed59242)
+
+ Traté de conseguir mejores detecciones aplicando escala de grises, y binarización, pero las detecciones no fueron mejor. Solamente distintas. 
   
 - Detección de textos con easyOCR en imagen estática.
 Es posible añadir varios idiomas con este OCR, probé con español e inglés, tanto juntos como de forma separada. Los mejores resultados fueron con el detector inglés, por lo que usaré este aprovechando que no necesito detectar nada que no esté en su diccionario.
@@ -135,7 +137,9 @@ Es posible añadir varios idiomas con este OCR, probé con español e inglés, t
 
 Posteriormente se ejecuta la función readtext() sobre la imagen para la obtención de texto.
 
-**Tras ejecutar el código con con varias imágenes, noté mejores resultados con easyOCR, con lo que decidí hacer las tareas siguientes con dicho detector. Es posible que el Tesseract requiera de algún tipo de procesado sobre las imágenes antes de detectar el texto.**
+Al igual que con Tesseract, probé a procesar la imágen, pero los resultados no mejoraron, asi que simplemente le pasé al OCR los recuadros detectados como matrículas. 
+
+**Tras ejecutar el código con con varias imágenes, noté mejores resultados con easyOCR, con lo que decidí hacer las tareas siguientes con dicho detector.**
 
 - Detección de texto de matrículas en video, guardando las detecciones en un csv, junto al número de apariciones del texto detectado.
   ![image](https://github.com/user-attachments/assets/736c90ca-f4b7-49b5-add8-545a0e6f614a)
@@ -243,19 +247,23 @@ En este video en particular no salen personas, pero de hacerlo, se les desenfoca
 
 ## Resultados con el video propuesto como ejemplo.
 
+Los videos utilizados son los siguientes:
 [Video original](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/alejandro_rodriguez145_alu_ulpgc_es/EUkgda2HjilBmpK9ZNmUpHMBEraGmpOVvIW09XabkJ-LzA?e=ZmcPTc&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 [Resultado](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/alejandro_rodriguez145_alu_ulpgc_es/EY2nOx3ZOx1Chz3enxzNwogBk2_fuxvb3hfpAYLNhYmiew?e=x27nP6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+Subí ambos al One Drive porque eran demasiado pesados como para subirlos al github.
 
 En el video propuesto hay bastantes personas y coches, pero no se detectan la mayoría de las matrículas por la posición de la cámara. 
 
 **Número de coches detectados:78. Número de personas: 51. Número de matrículas: 4.**
 
 La anonimización fue bastante buena en este caso, ya que el movimiento de los coches favorece la detección de los contornos de las matrículas, en cuenta a las detecciones con el OCR.
-De las 4 matrículas detectadas, solo dos de ellas tuvieron al menos una detección de texto perfecta. 1770 JYG en 2 frames, y 1965 KBP en 13 frames, 15 si contamos 2 frames en los que no fue detectado el espacio, pero si los demás caracteres. 
+De las 4 matrículas detectadas, solo dos de ellas tuvieron al menos una detección de texto perfecta. 1770 JYG en 2 frames, y 1965 KBP en 13 frames, 15 si contamos 2 frames en los que no fue detectado el espacio, pero si los demás caracteres. El archivo en donde se guardaron las detecciones es [detected_object.csv](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_4_Alejandro_Rodriguez_Mesa/detected_objects.csv)
 
 ![image](https://github.com/user-attachments/assets/5a4a2d43-da42-4da6-b41f-1c629bfe208f)
 
+**NOTA: Se detectaron mejores detecciones tanto de matrículas como de texto al aplicar el diccionario español junto al inglés en el OCR, que solo con uno de ellos.**
 
 # Referencias
 
