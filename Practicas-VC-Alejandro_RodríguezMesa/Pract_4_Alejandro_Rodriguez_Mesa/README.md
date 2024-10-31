@@ -207,8 +207,9 @@ Esto se puede solucionar simplemente aumentando la distancia máxima que puse, e
 
 ![image](https://github.com/user-attachments/assets/91336b47-efe6-4e18-9761-c41284415561)
 
-El video llamado video_output.mp4 que se encuentra en el github, es una demostración de lo que hace el código con un video que saqué. En este video en particular no salen personas, pero de serlo se les desenfoca la cara (para ser exactos la parte superior de lo detectado como persona).
-Para las personas se les desenfoca la cara, mientras que para las matrícualas se desenfoca todo el recuadro. 
+El video [video_output.mp4](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_4_Alejandro_Rodriguez_Mesa/video_output.mp4) que se encuentra en el repositorio, es una demostración de lo que hace el código con el video [video_test1.mp4](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_4_Alejandro_Rodriguez_Mesa/video_test1.mp4), que grabé durante un momento en el que se había formado un poco de tráfico. Esto hace que no sea el mejor escenario en cuanto a capacidad de detección por el movimiento de la cámara junto al de los coches, aunque entrené el modelo con varias imágenes en estas condiciones para que lo hiciese decentemente. 
+
+En este video en particular no salen personas, pero de hacerlo, se les desenfocaría la cara (para ser exactos la parte superior de lo detectado como persona).
 
 ![image](https://github.com/user-attachments/assets/7bbe2425-2bf1-48a6-b99a-87224bbd9128)
 
