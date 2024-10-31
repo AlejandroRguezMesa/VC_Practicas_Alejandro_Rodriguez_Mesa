@@ -205,7 +205,12 @@ Aunque por alguna razón, la matrícula deja de ser detectada durante 25 frames,
 
 Esto se puede solucionar simplemente aumentando la distancia máxima que puse, en el caso anterior estaba a 50, y al ponerlo a 100 se solucionaron varias de las detecciones. Y tanto la matrícula como el coche que fueron identificados con el id 1 al inicio, se mantuvieron como tal. Con esto quiero decir, que dependiendo del video puede ser necesario modificar este parámetro.
 
+![image](https://github.com/user-attachments/assets/91336b47-efe6-4e18-9761-c41284415561)
 
+El video llamado video_output.mp4 que se encuentra en el github, es una demostración de lo que hace el código con un video que saqué. En este video en particular no salen personas, pero de serlo se les desenfoca la cara (para ser exactos la parte superior de lo detectado como persona).
+Para las personas se les desenfoca la cara, mientras que para las matrícualas se desenfoca todo el recuadro. 
+
+![image](https://github.com/user-attachments/assets/7bbe2425-2bf1-48a6-b99a-87224bbd9128)
 
 # Referencias
 
