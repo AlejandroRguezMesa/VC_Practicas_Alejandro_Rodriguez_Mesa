@@ -199,6 +199,9 @@ A pesar de que probablemente lo mejor era cambiar de dataset, opté por quedarme
 
 Para equilibrarlo dejé un aproximado de 4000 imágenes por clase. Y tras un nuevo entrenamiento se obtuvieron los siguientes resultados para el mismo conjunto de test:
 
+![image](https://github.com/user-attachments/assets/48e70960-8661-4602-bd84-2f437501c904)
+
+Como se puede ver, se mejoró muchisimo la proporción de detecciones. Sobretodo para la clase "angry". Y prácticamente no se perdió precisión en las otras clases. Con lo que si que se puede determinar que antes había desbalanceo de clases. 
 
 5. Predicciones Nuevas: Una vez entrenado, el modelo puede realizar predicciones de expresiones faciales en nuevas imágenes, mostrando la etiqueta de expresión y el nivel de confianza en el resultado.
 
@@ -216,6 +219,7 @@ A modo tarea final junté todo lo que he hecho anteriormente con el nuevo detect
   - Animación Basada en el Tiempo: Cada cuadro del GIF se selecciona en función del tiempo, creando el efecto de animación de lluvia en cada fotograma.
 
 # Demostración
+El detector de emociones parece tener una tendencia a detectar tristeza, ya que las caras neutras a veces las toma en esta clase, la felicidad la suele detectar correctamente al sonreir, el enfado debe ser exagerado y con la boca abierta.
 
 # Referencias
 [Dataset de Emociones](https://www.kaggle.com/datasets/msambare/fer2013?resource=download)
