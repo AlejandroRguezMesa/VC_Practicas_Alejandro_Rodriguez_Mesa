@@ -219,7 +219,8 @@ A modo tarea final junté todo lo que he hecho anteriormente con el nuevo detect
   - Animación Basada en el Tiempo: Cada cuadro del GIF se selecciona en función del tiempo, creando el efecto de animación de lluvia en cada fotograma.
 
 # Demostración
-El detector de emociones parece tener una tendencia a detectar tristeza, ya que las caras neutras a veces las toma en esta clase, la felicidad la suele detectar correctamente al sonreir, el enfado debe ser exagerado y con la boca abierta.
+En la [demostración](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/alejandro_rodriguez145_alu_ulpgc_es/EY04RLBGG29PiuaI9ygYhWkBYAjLYIZSy3Q3QMQf7cbyHQ?e=Df4iZm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) se observa el funcionamiento del filtro, aunque las detecciones de emociones pueden resultar imprecisas dependiendo de la cámara, la iluminación y otros factores. Esta área del filtro tiene un margen significativo de mejora. Por otro lado, es posible apreciar el superposicionamiento de los elementos de Pikachu y su comportamiento al moverse. En este aspecto, es necesario mejorar la alineación de las orejas al girar completamente la cabeza. En cuanto a la detección de género, el filtro generalmente me clasifica como hombre, aunque en algunos ángulos de cámara realiza detecciones erróneas, identificándome como mujer; en estos casos, se muestran rayos de otro color y pestañas adicionales.
+
 
 # Referencias
 [Dataset de Emociones](https://www.kaggle.com/datasets/msambare/fer2013?resource=download)
