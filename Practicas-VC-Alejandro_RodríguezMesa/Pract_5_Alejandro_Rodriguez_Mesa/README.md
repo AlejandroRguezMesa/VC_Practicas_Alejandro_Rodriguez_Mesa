@@ -101,7 +101,7 @@ Finalmente, todos los segmentos, tanto los del rayo principal como los de las ra
 Para probar cómo se veía en video, me basé en el código propuesto como base en el repositorio de otsedom en VC_P5_detectores.ipynb, y puse de origen los ojos. 
 
 ## Pruebas con la malla de puntos de MediaPipe
-Una vez hecho el rayo, creé un código para convertir los frames detectados a la malla de puntos de puntos que detecta MediaPipe, esto con el fin de comprobar cómo se deforma mi cara al inflar los mofletes, ya que es en este caso que deben dibujarse los rayos. Tras hacer el gesto fue fácil notar que el alto de la cara se reduce, y el ancho de la cara aumenta. Además de que se compacta la parte inferior de la cara. 
+Una vez hecho el rayo, creé un código para dibujar la malla de puntos de puntos que detecta MediaPipe, esto con el fin de comprobar cómo se deforma mi cara al inflar los mofletes, ya que es en este caso que deben dibujarse los rayos. Tras hacer el gesto fue fácil notar que el alto de la cara se reduce, y el ancho de la cara aumenta. Además de que se compacta la parte inferior de la cara. 
 
 Por lo tanto, si se cumplen estas condiciones, se podría suponer que los mofletes se están inflandos. Esto no es absoluto, y podría dar falsos positivos, pero debería de funcionar en la mayoría de situaciones. 
 
