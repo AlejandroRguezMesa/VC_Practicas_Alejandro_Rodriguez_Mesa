@@ -101,9 +101,11 @@ Finalmente, todos los segmentos, tanto los del rayo principal como los de las ra
 Para probar cómo se veía en video, me basé en el código propuesto como base en el repositorio de otsedom en VC_P5_detectores.ipynb, y puse de origen los ojos. 
 
 ## Pruebas con la malla de puntos de MediaPipe
-Una vez hecho el rayo, creé un código para convertir los frames detectados a la malla de puntos de puntos que detecta MediaPipe, esto con el fin de comprobar cómo se deforma mi cara al inflar los mofletes, ya que es en este caso que deben dibujarse los rayos. Tras hacer el gesto fue fácil notar que el alto de la cara se reduce, y el ancho de la cara aumenta. Además de que se compacta la parte inferior de la cara. 
+Una vez hecho el rayo, creé un código para dibujar la malla de puntos de puntos que detecta MediaPipe, esto con el fin de comprobar cómo se deforma mi cara al inflar los mofletes, ya que es en este caso que deben dibujarse los rayos. Tras hacer el gesto fue fácil notar que el alto de la cara se reduce, y el ancho de la cara aumenta. Además de que se compacta la parte inferior de la cara. 
 
 Por lo tanto, si se cumplen estas condiciones, se podría suponer que los mofletes se están inflandos. Esto no es absoluto, y podría dar falsos positivos, pero debería de funcionar en la mayoría de situaciones. 
+
+![face mesh-inflando mofletes y moviendose](https://github.com/user-attachments/assets/389280b7-6820-481c-ac65-1a34c7935c7c)
 
 ## Código del Filtro de pikachu 
 
@@ -185,7 +187,7 @@ Para el entrenamiento de un modelo de clasificación de expresiones faciales a p
 
 2. Preparación de Datos: Los datos de landmarks almacenados se cargan y se convierten en un formato adecuado para el modelo, con cada imagen representada como un vector de coordenadas y etiquetas de clase.
 
-3. Entrenamiento del Modelo: Utilizando XGBoost, se entrena un modelo de clasificación. Se configura una búsqueda en grid para optimizar ciertos hiperparámetros del modelo, mejorando su precisión en la clasificación de emociones.
+3. Entrenamiento del Modelo:  Se entrena un modelo de clasificación utilizando XGBoost, una biblioteca compatible con python que ofrece un marco de regularización de potenciación de gradiente, una técnica de aprendizaje automático utilizado para el análisis de la regresión y para problemas de clasificación estadística. Se configura una búsqueda en grid para optimizar ciertos hiperparámetros del modelo, mejorando su precisión en la clasificación de emociones. 
 
 4. Evaluación: El modelo entrenado es evaluado en un conjunto de prueba mediante métricas como precisión y matriz de confusión para observar el rendimiento de la clasificación. La matriz de confusión de los test es el siguiente:
 
@@ -218,11 +220,17 @@ A modo tarea final junté todo lo que he hecho anteriormente con el nuevo detect
   - Superposición del GIF: Se ajusta el GIF de lluvia al tamaño del fotograma de la cámara y se coloca sobre la imagen de fondo usando su canal alfa para respetar las zonas transparentes.
   - Animación Basada en el Tiempo: Cada cuadro del GIF se selecciona en función del tiempo, creando el efecto de animación de lluvia en cada fotograma.
 
+![Demo-gif](https://github.com/user-attachments/assets/df4c056f-3f76-44a5-9362-03c4757d20c6)
+
 # Demostración
-El detector de emociones parece tener una tendencia a detectar tristeza, ya que las caras neutras a veces las toma en esta clase, la felicidad la suele detectar correctamente al sonreir, el enfado debe ser exagerado y con la boca abierta.
+En la [demostración](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/alejandro_rodriguez145_alu_ulpgc_es/EY04RLBGG29PiuaI9ygYhWkBYAjLYIZSy3Q3QMQf7cbyHQ?e=Df4iZm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) se observa el funcionamiento del filtro, aunque las detecciones de emociones pueden resultar imprecisas dependiendo de la cámara, la iluminación y otros factores. Esta área del filtro tiene un margen significativo de mejora. Por otro lado, es posible apreciar el superposicionamiento de los elementos de Pikachu y su comportamiento al moverse. En este aspecto, es necesario mejorar la alineación de las orejas al girar completamente la cabeza. En cuanto a la detección de género, el filtro generalmente me clasifica como hombre, aunque en algunos ángulos de cámara realiza detecciones erróneas, identificándome como mujer; en estos casos, se muestran rayos de otro color y pestañas adicionales.
+
+
 
 # Referencias
 [Dataset de Emociones](https://www.kaggle.com/datasets/msambare/fer2013?resource=download)
 [Inspiración inicial para los rayos](https://github.com/codemonkeycxy/Thor/blob/master/lightning_generatror.py)
 [Uso de modelo de deteccion facial con MediaPipe](https://www.kaggle.com/code/pabasar/facial-expression-recognition-mediapipe/notebook)
 [Repositorio de Otsedom de la práctica](https://github.com/otsedom/otsedom.github.io/tree/main/VC/P5)
+[Wikipedia XGBoost](https://es.wikipedia.org/wiki/XGBoost)
+[Gradient boosting](https://es.wikipedia.org/wiki/Gradient_boosting)
