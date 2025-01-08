@@ -5,6 +5,8 @@
 # Trabajo Final de la asignatura
 En el readme no entraré demasiado en detalles debido a la memoria que realicé, será para facilitar capturas de la aplicación por si alguien que encuentra el repositorio está interesado en replicarlo. Además de mencionar cómo montar el enviroment de Anaconda.
 ## Memoria
+La [memoria](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/Memoria.pdf) contiene lo solicitado en el índice del repositorio de [otsedom](https://github.com/otsedom/otsedom.github.io/tree/main/VC/Trabajo)
+![image](https://github.com/user-attachments/assets/38884da9-249c-43d9-9a2b-3e2a6e34f958)
 
 ## Instalación y enviroment en Anaconda
 ### Para los entrenamientos con YOLO lo mejor es utilizar la GPU mediante CUDA
@@ -214,7 +216,7 @@ Por último, en el botón de cuenta se puede ver el numero de veces que se ha in
 # Video Explicativo
 
 # Recursos
-Se encuentran en la Memoria
+Se encuentran en la [memoria](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/Memoria.pdf) 
 
 
 
