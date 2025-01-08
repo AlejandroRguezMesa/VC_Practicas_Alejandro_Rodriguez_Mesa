@@ -39,6 +39,56 @@ La instalación de delib probablemente fallará, para instalarlo lo mejor es seg
 
 Se usan otras librerías como json o shutil que son parte de las librerías estandar de python, tal como se puede ver en la siguiente [lista](https://docs.python.org/3.10/library/).
 
+# Resultados del entrenamiento
+Tras hacer los entrenamientos, tal y como se ve en el [cuaderno](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/biometric.ipynb) 
+
+## Spoofing
+![image](https://github.com/user-attachments/assets/60ee4562-4ff2-4ae2-8632-a93bbc25ec48)
+Según la matriz de confusión, se detectan bastante bien los casos de spòofing. Aunque he detectado que tiende a detectar Device, ya que en ocasiones detecta esta clase cuando corresponde a otro tipo de spoofing. Esto puede deberse al desbalanceo de clases que hay. Podría haber eliminado imágenes para equilibrar, pero como me interesaba simplemente detectar spoofing, y no el tipo, me sirvió para este caso de uso. 
+
+![image](https://github.com/user-attachments/assets/700aa441-ee27-4f1c-bb51-5098b601cab6)
+
+En base en los gráficos mostrados:
+
+**Pérdidas de entrenamiento (train/box_loss, train/cls_loss, train/dfl_loss):**
+
+- Todas las curvas de pérdidas disminuyen progresivamente con el tiempo, lo que indica que el modelo está aprendiendo durante el entrenamiento.
+
+**Pérdidas de validación (val/box_loss, val/cls_loss, val/dfl_loss):**
+
+- Las pérdidas de validación también disminuyen de manera consistente, lo que sugiere que no hay un sobreajuste significativo.
+
+**Métricas de precisión y recall (metrics/precision(B), metrics/recall(B)):**
+
+- Ambas métricas aumentan progresivamente y se estabilizan cerca de valores altos (>0.9), lo que es una señal positiva de un modelo bien entrenado.
+
+**Métricas de mAP (metrics/mAP50(B), metrics/mAP50-95(B)):**
+
+- Estas métricas también mejoran consistentemente y alcanzan valores altos (>0.8), lo que indica que el modelo tiene un buen desempeño en las tareas de detección de objetos.
+En general, este entrenamiento parece haber sido exitoso, ya que las pérdidas disminuyen de forma consistente y las métricas de desempeño son altas. Esto sugiere que el modelo está bien ajustado y logra un equilibrio entre entrenamiento y validación sin señales de sobreajuste o bajoajuste.
+
+## Gafas y Máscaras o Mascarillas
+![image](https://github.com/user-attachments/assets/a8d0d57b-5daa-4af7-88c6-6f82600d89d4)
+Vuelve a haber desbalanceo respecto a mask y no mask, aunque no es demasiado grande. Al final los modelos no eran los más acertados en este campo, y a esto se le añade que tuve que eliminar imágenes por malas anotaciones, el desbalanceo en las gafas no afecta en este caso. 
+
+![image](https://github.com/user-attachments/assets/40654bde-5615-445d-8930-82454fbd3061)
+
+**Pérdidas de entrenamiento (train/box_loss, train/cls_loss, train/dfl_loss):**
+
+- Las pérdidas de entrenamiento disminuyen de manera consistente, lo que indica que el modelo está aprendiendo correctamente.
+
+**Pérdidas de validación (val/box_loss, val/cls_loss, val/dfl_loss):**
+
+- Las pérdidas de validación también muestran una tendencia decreciente, aunque parecen estabilizarse en valores ligeramente más altos que las pérdidas de entrenamiento. Esto podría ser un indicio de una ligera diferencia entre el rendimiento en entrenamiento y validación, pero sigue siendo aceptable.
+
+**Métricas de precisión y recall (metrics/precision(B), metrics/recall(B)):**
+
+- Tanto la precisión como el recall muestran una mejora progresiva y se estabilizan en valores altos (~0.9), lo que es una buena señal del desempeño del modelo.
+
+**Métricas de mAP (metrics/mAP50(B), metrics/mAP50-95(B)):**
+
+- Las métricas mAP50 y mAP50-95 muestran un aumento continuo y alcanzan valores buenos (~0.95 para mAP50 y ~0.7 para mAP50-95). Esto sugiere que el modelo tiene un desempeño sólido en tareas de detección de objetos.
+
 # APP
 Al igual que en la memoria, iré por el orden en el que el usuario ve la aplicación al ejecutarla. En primer lugar, se ve el video inicial, que se reproduce con openCV a la par que la música-inicial con pygame. En la carpeta [assets](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/tree/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/assets) se pueden ver las imagenes, gifs, videos y sonidos usados. 
 
@@ -47,6 +97,8 @@ Antes de empezar, decir que en el cuaderno no solo se encuentra el código para 
 Un ejemplo de ello son las predicciones del DeepFace.analyze() o la estimación de la posición de la cabeza.
 
 ![image](https://github.com/user-attachments/assets/fa3ab42a-c347-437b-a77f-211172314d65)
+
+Este código es necesario ejecutarlo para que funcionen las predicciones en la APP posteriormente
 
 ![image](https://github.com/user-attachments/assets/3bb4ca5d-9cf4-4da6-a151-89d9b189750d)
 
@@ -111,13 +163,14 @@ Al iniciar sesión, fui detectado como el usuario Prueba
 
 ![image](https://github.com/user-attachments/assets/7e10e021-78ed-4454-82f2-ac20d3ef921d)
 
-Si miramos en el botón de estadísticas, podemos ver la similitud detectada respecto a otros usuarios. En este caso ambos soy yo, me registré como ale en días diferentes, con lo que la imagen de "prueba" que me saqué hace unos minutos es de esperar que tenga más parecido. Al fin y al cabo, la luminosidad es diferente, mi cara puede estar más o menos hinchada, la toma por distancia puede ser distinta, la expresión tomada en ese frame, etc.
+En otra instancia, con otro usuario y habiendo eliminado el usuario prueba, eliminé al usuario Prueba y añadí a otras personas. En el botón de estadísticas, podemos ver la similitud detectada respecto a otros usuarios. En este caso, inicié sesión como ale.
+![image](https://github.com/user-attachments/assets/5154cc65-5dc3-407d-9bbd-6acd2d681605)
 
-![image](https://github.com/user-attachments/assets/9f71ebee-8251-47f0-8881-b46ac594eec2)
 
-La simetría simplemente traza una linea en la mitad del eje x, invierte una de las mitades y calcula el error cuadrático medio (mse)
 
-![image](https://github.com/user-attachments/assets/a71d3a93-6057-4d9b-826b-870bd2368238)
+La simetría se realiza dibujando la mesh de la cara para la imagen, recortando la cara, para posteriormente trazar una linea en la mitad del eje x, e invertir una de las mitades y calcular el error cuadrático medio (mse). Se puede ver las imágenes de la parte izquierda y derecha de la cara en el github para ver el resultado del flip.
+
+![image](https://github.com/user-attachments/assets/21fe59ea-ca5f-48f5-b2cb-19a6a0d46b7c)
 
 
 En el botón de predicciones puede llegar a suceder este error si no se leyó con atención el cuaderno. 
@@ -127,6 +180,7 @@ En el botón de predicciones puede llegar a suceder este error si no se leyó co
 Esto se debe a que no se han cargado las dependencias del modelo pre entrenado que predice emociones, edad, raza y género. 
 
 Es necesario ejecutar previamente este código con una imagen existente para asegurarse de que cargue, si falla es cuestión de volver a intentarlo, y reiniciar el enviroment antes de volver a hacerlo. 
+
 
 ```
 from deepface import DeepFace
@@ -150,11 +204,12 @@ Gender:  {'Woman': 0.06050013471394777, 'Man': 99.93950128555298}
 Emotion:  neutral
 Race:  latino hispanic
 
-![image](https://github.com/user-attachments/assets/6c4c0d0f-585e-4d2d-b6c1-c05a50191ee8)
-
 Una vez hecho, la predicción se puede realizar sin problema. Las predicciones se hacen con la imagen sin procesar. 
 
 ![image](https://github.com/user-attachments/assets/662480b2-3fab-418a-b9c1-073548984df0)
+
+Por último, en el botón de cuenta se puede ver el numero de veces que se ha iniciado sesión y la fecha y hora de la última conexión.
+![image](https://github.com/user-attachments/assets/6c4c0d0f-585e-4d2d-b6c1-c05a50191ee8)
 
 # Video Explicativo
 
