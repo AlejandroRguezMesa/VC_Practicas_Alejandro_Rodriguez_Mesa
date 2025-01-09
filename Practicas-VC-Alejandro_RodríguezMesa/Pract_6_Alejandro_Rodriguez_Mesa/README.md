@@ -170,7 +170,11 @@ En otra instancia, con otro usuario y habiendo eliminado el usuario prueba, elim
 
 
 
-La simetría se realiza dibujando la mesh de la cara para la imagen, recortando la cara, para posteriormente trazar una linea en la mitad del eje x, e invertir una de las mitades y calcular el error cuadrático medio (mse). Se puede ver las imágenes de la parte izquierda y derecha de la cara en el github para ver el resultado del flip.
+La simetría se realiza dibujando la mesh de la cara para la imagen, recortando la cara, para posteriormente trazar una linea en la mitad del eje x, e invertir una de las mitades y calcular el error cuadrático medio (mse). Se puede ver las imágenes de la parte [izquierda](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/left_half.jpg) y [derecha invertida](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/right_half_flipped.jpg) de la cara en el github para ver el resultado del flip. También puede descomentarse el paso 8.1 que hay en la función *evaluate_facial_symmetry_window()*, donde se guardan localmente las imágenes de ambas partes de la cara.
+
+![image](https://github.com/user-attachments/assets/52c429f2-f574-4ac0-9b4b-438ddb2fec2b)
+
+
 
 ![image](https://github.com/user-attachments/assets/21fe59ea-ca5f-48f5-b2cb-19a6a0d46b7c)
 
@@ -240,15 +244,21 @@ Informática Gráfica](https://animation-maker.glitch.me))
 
 ▪ [Gif del loader](https://prattatatat.com/scifiui) 
 
-▪ [[Los botones fueron hechos con la IA de Canva](https://www.canva.com/es_es/login/?redirect=%2Fdream-lab) 
+▪ [Los botones fueron hechos con la IA de Canva](https://www.canva.com/es_es/login/?redirect=%2Fdream-lab) 
 
 ▪ [Background Foto](https://www.canva.com/es_es/login/?redirect=%2Fdream-lab)
 
 
 **Recursos web Adicionales**
+
 ▪ [DeepFace Analyze](https://pypi.org/project/deepface/0.0.24/)
+
 ▪ [Espacio de trabajo de Roboflow](https://app.roboflow.com/)
+
 ▪ [Descarga de shape_predictor_68_face_landmarks.dat](http://dlib.net/files/)
+
 ▪ [Video tutorial para instalar Dlib](https://www.youtube.com/watch?v=9zeb902f98s&ab_channel=BoomBoomMushroom)
+
 ▪ [Documentación de Tkinter](https://docs.python.org/es/3.13/library/tkinter.html)
+
 ▪ [Video acerca de la detección de posición de cabeza con MediaPipe](https://www.youtube.com/watch?v=-toNMaS4SeQ&ab_channel=NicolaiNielsen)
