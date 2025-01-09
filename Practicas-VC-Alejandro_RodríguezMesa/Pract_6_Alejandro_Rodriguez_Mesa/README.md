@@ -213,10 +213,42 @@ Una vez hecho, la predicción se puede realizar sin problema. Las predicciones s
 Por último, en el botón de cuenta se puede ver el numero de veces que se ha iniciado sesión y la fecha y hora de la última conexión.
 ![image](https://github.com/user-attachments/assets/6c4c0d0f-585e-4d2d-b6c1-c05a50191ee8)
 
-# Video Explicativo
+# Video - Demo
+Hice un [video](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/alejandro_rodriguez145_alu_ulpgc_es/EWwvpFpmcMhEh6HfXXA34M8BS_aHodcVSDyBor8V1DIeiA?e=YakRcr&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) a modo demostración de lo que se puede hacer con la herramienta que he creado. 
 
 # Recursos
-Se encuentran en la [memoria](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/Memoria.pdf) 
+
+**Datasets** 
+
+▪ [Glasses](https://universe.roboflow.com/glasses/glasses-ittql/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true) 
+
+▪ [Masks](https://universe.roboflow.com/franklynps14-gmail-com/mask-detection-q3cma/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true) 
+
+▪ [Spoofing](https://universe.roboflow.com/facespoofing-ymddd/final-face/browse?queryText=class%3AFace&pageSize=50&startingIndex=0&browseQuery=true) 
+
+**Imágenes y Música**
+
+▪ El video inicial es de mi propiedad (solo el video, el audio no. 
+Hecho con three.js para el [trabajo final de la asignatura 
+Informática Gráfica](https://animation-maker.glitch.me)) 
+
+▪ [Música del video inicial](https://pixabay.com/es/sound-effects/ambient-piano-logo-165357/)  
+
+▪ [Música de fondo de la app](https://pixabay.com/music/solo-instruments-light-10465/) 
+
+▪ [Sonido de sacar foto](https://pixabay.com/sound-effects/camera-shutter-6305/) 
+
+▪ [Gif del loader](https://prattatatat.com/scifiui) 
+
+▪ [[Los botones fueron hechos con la IA de Canva](https://www.canva.com/es_es/login/?redirect=%2Fdream-lab) 
+
+▪ [Background Foto](https://www.canva.com/es_es/login/?redirect=%2Fdream-lab)
 
 
-
+**Recursos web Adicionales**
+▪ [DeepFace Analyze](https://pypi.org/project/deepface/0.0.24/)
+▪ [Espacio de trabajo de Roboflow](https://app.roboflow.com/)
+▪ [Descarga de shape_predictor_68_face_landmarks.dat](http://dlib.net/files/)
+▪ [Video tutorial para instalar Dlib](https://www.youtube.com/watch?v=9zeb902f98s&ab_channel=BoomBoomMushroom)
+▪ [Documentación de Tkinter](https://docs.python.org/es/3.13/library/tkinter.html)
+▪ [Video acerca de la detección de posición de cabeza con MediaPipe](https://www.youtube.com/watch?v=-toNMaS4SeQ&ab_channel=NicolaiNielsen)
