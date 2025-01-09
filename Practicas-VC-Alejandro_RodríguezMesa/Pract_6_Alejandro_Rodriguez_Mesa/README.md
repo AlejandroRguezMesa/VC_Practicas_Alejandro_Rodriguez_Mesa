@@ -2,9 +2,17 @@
 
 ***Asignatura:*** *Visión por Computador*
 
-# Trabajo Final de la asignatura
-En el readme no entraré demasiado en detalles debido a la memoria que realicé, será para facilitar capturas de la aplicación por si alguien que encuentra el repositorio está interesado en replicarlo. Además de mencionar cómo montar el enviroment de Anaconda.
-## Memoria
+<h1 align="center">Trabajo Final VC - Autenticación mediante Reconocimiento Facial</h1>
+
+<div align="center">
+<img width="700px" src="https://github.com/user-attachments/assets/c88d22b9-1e60-49c9-b3f3-b9cb8d6c5754">
+</div>
+
+
+
+## Introducción y Memoria
+En el readme no entraré demasiado en detalles debido a la memoria que realicé, será para facilitar capturas de la aplicación por si alguien que encuentra el repositorio y está interesado en replicarlo. Se mencionará cómo montar el enviroment de Anaconda, se porporcionará información acerca de los entrenamientos YOLO, imágenes del proecto, recursos utilizados, etc.
+
 La [memoria](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/Memoria.pdf) contiene lo solicitado en el índice del repositorio de [otsedom](https://github.com/otsedom/otsedom.github.io/tree/main/VC/Trabajo)
 ![image](https://github.com/user-attachments/assets/38884da9-249c-43d9-9a2b-3e2a6e34f958)
 
