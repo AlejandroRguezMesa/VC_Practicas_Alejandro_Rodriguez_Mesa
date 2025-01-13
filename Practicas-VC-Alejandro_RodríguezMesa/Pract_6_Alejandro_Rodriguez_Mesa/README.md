@@ -99,6 +99,13 @@ Vuelve a haber desbalanceo respecto a mask y no mask, aunque no es demasiado gra
 
 - Las métricas mAP50 y mAP50-95 muestran un aumento continuo y alcanzan valores buenos (~0.95 para mAP50 y ~0.7 para mAP50-95). Esto sugiere que el modelo tiene un desempeño sólido en tareas de detección de objetos.
 
+# Modelo escogido para generar embeddings
+
+Para la selección del modelo a usar en DeepFace, tuve que elegir entre varias opciones disponibles. Para ello, creé un [script](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/model_test.py) en el que calculé la efectividad de varios de los modelos que ofrece DeepFace. Los [resultados](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/blob/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/metricas.txt) me sirvieron para descartar varios modelos, principalmente debido a la poca discriminación entre personas que presentaron. Al ser un sistema de biometría el hecho de no ser bueno distinguiendo entre personas distintas es muy perjudicial. Por lo que fueron inmediatamente descartados los que no obtuvieron un alto índice de discriminación. 
+![image](https://github.com/user-attachments/assets/0f886fec-4693-4815-b5c7-1287486e798b)
+
+Entre FaceNet, ArcFace y SFace, me decidí por utilizar como modelo para la Demo final FaceNet. Esto debido a que ArcFace presentó ciertos problemas de compatibilidad con la versión que usé de TensorFlow y Keras. SFace por su parte, no presentó diferencias significativas con FaceNet durante las pruebas que realicé, pero me decidí por este último ya que se suele utilizar más en aplicaciones de autenticación biométrica que SFace, el cual es más usado en sistemas no críticos. 
+
 # APP
 Al igual que en la memoria, iré por el orden en el que el usuario ve la aplicación al ejecutarla. En primer lugar, se ve el video inicial, que se reproduce con openCV a la par que la música-inicial con pygame. En la carpeta [assets](https://github.com/AlejandroRguezMesa/VC_Practicas_Alejandro_Rodriguez_Mesa/tree/main/Practicas-VC-Alejandro_Rodr%C3%ADguezMesa/Pract_6_Alejandro_Rodriguez_Mesa/assets) se pueden ver las imagenes, gifs, videos y sonidos usados. 
 
