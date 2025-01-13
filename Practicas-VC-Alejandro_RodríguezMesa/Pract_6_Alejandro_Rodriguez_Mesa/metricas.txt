@@ -1,0 +1,71 @@
+=== RESULTADOS FINALES ===
+
+Modelo: Facenet
+ - Tiempo Total (s)           : 8.0759
+ - Tiempo Promedio (s/imagen) : 0.8076
+ - Tamaño de Embedding        : 128
+ - Distancia Intra-clase      : 0.439619
+ - Distancias Inter-usuarios (Ale vs ...):
+     * adriana: 0.751373
+     * mama: 0.715021
+     * papa: 0.818074
+
+Modelo: VGG-Face
+ - Tiempo Total (s)           : 3.1966
+ - Tiempo Promedio (s/imagen) : 0.3197
+ - Tamaño de Embedding        : 4096
+ - Distancia Intra-clase      : 0.239119
+ - Distancias Inter-usuarios (Ale vs ...):
+     * adriana: 0.788189
+     * mama: 0.887848
+     * papa: 0.834762
+
+Modelo: OpenFace
+ - Tiempo Total (s)           : 3.2111
+ - Tiempo Promedio (s/imagen) : 0.3211
+ - Tamaño de Embedding        : 128
+ - Distancia Intra-clase      : 0.166872
+ - Distancias Inter-usuarios (Ale vs ...):
+     * adriana: 0.331554
+     * mama: 0.285031
+     * papa: 0.676942
+
+Modelo: DeepID
+ - Tiempo Total (s)           : 0.5130
+ - Tiempo Promedio (s/imagen) : 0.0513
+ - Tamaño de Embedding        : 160
+ - Distancia Intra-clase      : 0.031863
+ - Distancias Inter-usuarios (Ale vs ...):
+     * adriana: 0.068169
+     * mama: 0.102976
+     * papa: 0.077485
+
+Modelo: ArcFace
+ - Tiempo Total (s)           : 4.7633
+ - Tiempo Promedio (s/imagen) : 0.4763
+ - Tamaño de Embedding        : 512
+ - Distancia Intra-clase      : 0.179002
+ - Distancias Inter-usuarios (Ale vs ...):
+     * adriana: 0.846953
+     * mama: 0.811424
+     * papa: 0.804334
+
+Modelo: Dlib
+ - Tiempo Total (s)           : 3.8361
+ - Tiempo Promedio (s/imagen) : 0.3836
+ - Tamaño de Embedding        : 128
+ - Distancia Intra-clase      : 0.029019
+ - Distancias Inter-usuarios (Ale vs ...):
+     * adriana: 0.136350
+     * mama: 0.128575
+     * papa: 0.128418
+
+Modelo: SFace
+ - Tiempo Total (s)           : 0.5182
+ - Tiempo Promedio (s/imagen) : 0.0518
+ - Tamaño de Embedding        : 128
+ - Distancia Intra-clase      : 0.217028
+ - Distancias Inter-usuarios (Ale vs ...):
+     * adriana: 0.600735
+     * mama: 0.784336
+     * papa: 0.784782
